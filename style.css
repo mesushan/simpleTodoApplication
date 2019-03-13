@@ -19,6 +19,10 @@ body {
   height: 20px;
   width: 90%;
 }
+#container .input,
+input::-webkit-input-placeholder {
+  font-size: 15px;
+}
 
 #container h1 {
   margin-top: 50px;
@@ -73,7 +77,7 @@ body {
   margin: auto;
 }
 #container .controls #input {
-  width: 100%;
+  width: 90%;
   height: 30px;
   font-size: 20px;
   padding-left: 5px;

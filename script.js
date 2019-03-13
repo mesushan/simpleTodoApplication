@@ -10,7 +10,40 @@ var removeButton = document.getElementById("remove");
 removeButton.addEventListener("click", removeItem);
 
 function addItem() {
-  console.log("Add button clicked");
+  var input = document.getElementById("input");
+  var item = input.value;
+  ul = document.getElementById("list");
+  var textnode = document.createTextNode(item);
+
+  if (item === "") {
+    return false;
+  } else {
+    // creare li
+    li = document.createElement("li");
+
+    //create checkbox
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.setAttribute("id", "check");
+
+    //create label
+    var label = document.createElement("label");
+    label.setAttribute("for", "item");
+
+    //add these elements on web page
+    ul.appendChild(label);
+    li.appendChild(checkbox);
+    label.appendChild(textnode);
+    li.appendChild(label);
+    ul.insertBefore(li, ul.childNodes[0]);
+    //li.className = "visual";
+
+    setTimeout(() => {
+      li.className = "visual";
+    }, 2);
+
+    input.value = "";
+  }
 }
 
 function removeItem() {
